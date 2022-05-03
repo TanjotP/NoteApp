@@ -9,6 +9,7 @@ import com.example.noteappmvvm.feature_note.domain.use_case.AddNoteUseCase
 import com.example.noteappmvvm.feature_note.domain.use_case.DeleteNoteUseCase
 import com.example.noteappmvvm.feature_note.domain.use_case.GetNotesUseCase
 import com.example.noteappmvvm.feature_note.domain.use_case.NoteUseCases
+
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -21,7 +22,7 @@ object AppModule {
 
     @Provides
     @Singleton
-    fun provideNoteDatabase(app: Application): NoteDatabase{
+    fun provideNoteDatabase(app: Application): NoteDatabase {
         return Room.databaseBuilder(
             app,
             NoteDatabase::class.java,
@@ -37,11 +38,11 @@ object AppModule {
 
     @Provides
     @Singleton
-    fun provideNoteUseCases(repository: NoteRepository) : NoteUseCases {
+    fun provideNoteUseCases(repository: NoteRepository): NoteUseCases {
         return NoteUseCases(
-            getNotesUseCase = GetNotesUseCase(repository = repository),
-            deleteNoteUseCase = DeleteNoteUseCase(repository = repository),
-            addNoteUseCase = AddNoteUseCase(repository = repository)
+            GetNotesUseCase(repository),
+            DeleteNoteUseCase(repository),
+            AddNoteUseCase(repository),
         )
     }
 }

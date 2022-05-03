@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">NoteAppMvvm</string>
+
+    <!-- View Notes Screen -->
+    <string name="view_notes_title">Notes</string>
+
+    <!-- Filters -->
+    <string name="filter_ascending_button">Ascending</string>
+    <string name="filter_descending_button">Descending</string>
+    <string name="filter_color_button">Color</string>
+    <string name="filter_date_button">Date</string>
+    <string name="filter_title_button">Title</string>
+
 </resources>
